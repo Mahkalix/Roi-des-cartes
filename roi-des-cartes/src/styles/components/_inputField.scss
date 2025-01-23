@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as variables;
+
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.input-field-label {
+  font-size: 1rem;
+  color: variables.$gray-light;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid variables.$white;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: variables.$primary-color;
+  outline: none;
+}

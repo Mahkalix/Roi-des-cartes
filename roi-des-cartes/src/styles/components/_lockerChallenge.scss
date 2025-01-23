@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as variables;
+
+.locker-challenge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.attention-section {
+  margin-bottom: 20px;
+  color: variables.$primary-color; /* Couleur rouge pour attirer l'attention */
+  font-size: 16px;
+}
+
+.attention-symbol {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.sequence-display h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sequence-display p {
+  font-size: 24px;
+  font-weight: bold;
+  color: variables.$gray-light;
+}
+
+.input-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-message {
+  color: variables.$primary-color;
+  margin-top: 10px;
+  font-size: 14px;
+}

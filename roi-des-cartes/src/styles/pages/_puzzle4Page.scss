@@ -1,0 +1,183 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as variables;
+
+.modal-content {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: -40px;
+
+  &.blurred {
+    filter: blur(5px);
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: variables.$black;
+    text-decoration: underline;
+  }
+  p {
+    color: variables.$black;
+  }
+}
+
+table.maze {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  height: 40vh;
+}
+
+.maze td {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+
+.topWall {
+  border-top: 3px solid white;
+}
+
+.rightWall {
+  border-right: 3px solid white;
+}
+
+.bottomWall {
+  border-bottom: 3px solid white;
+}
+
+.leftWall {
+  border-left: 3px solid white;
+}
+
+.player {
+  background-color: variables.$primary-color !important;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.destination {
+  background-color: variables.$valid !important;
+  border-radius: 50%;
+}
+
+.victory {
+  margin-top: 20px;
+  font-size: 24px;
+  color: variables.$valid;
+  font-weight: bold;
+}
+.controls-container {
+  margin-top: 50px; // Ajustez cette valeur pour déplacer les flèches plus bas
+  display: flex;
+  justify-content: center; // Centre les flèches horizontalement
+}
+.controls {
+  position: fixed;
+  bottom: 20px; /* Position en bas de l'écran */
+  left: 50%;
+  transform: translateX(-50%); /* Centrage horizontal */
+  display: grid;
+  grid-template-rows: 50px 50px 50px; /* Trois rangées */
+  grid-template-columns: 50px 50px 50px; /* Trois colonnes */
+  gap: 5px; /* Espacement entre les boutons */
+  justify-content: center;
+  align-items: center;
+}
+
+.button-up {
+  grid-row: 1; /* Première rangée */
+  grid-column: 2; /* Deuxième colonne */
+}
+
+.button-left {
+  grid-row: 2; /* Deuxième rangée */
+  grid-column: 1; /* Première colonne */
+}
+
+.button-right {
+  grid-row: 2; /* Deuxième rangée */
+  grid-column: 3; /* Troisième colonne */
+}
+
+.button-down {
+  grid-row: 3; /* Troisième rangée */
+  grid-column: 2; /* Deuxième colonne */
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #e0e0e0;
+}
+
+.controls button:active {
+  background-color: #d0d0d0;
+}
+
+.next-level-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.next-level-buttons button {
+  padding: 10px 20px;
+  background-color: variables.$primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pause-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: variables.$primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+}
+
+.modal-content {
+  background-color: white;
+  color: variables.$black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  filter: none; /* Ensure the modal itself is not blurred */
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+}

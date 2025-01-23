@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c02a5b19-bfae-4915-b079-6339d5dd0977" name="roi-de-cartes">
+        <fileTransfer accessType="SFTP" host="22.gremmi.fr" port="22" sshConfigId="278192f3-484b-4c02-b65e-2b04315e5bf3" sshConfig="g1s5d@22.gremmi.fr:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

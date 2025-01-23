@@ -1,0 +1,52 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as variables;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: variables.$white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid variables.$gray-light;
+  width: 300px;
+  text-align: center;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: variables.$black;
+  }
+
+  .text {
+    margin-bottom: 10px;
+    color: variables.$black;
+  }
+
+  .answer-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid variables.$gray-light;
+    border-radius: 5px;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button:hover {
+      border: 1px solid variables.$white;
+    }
+  }
+}

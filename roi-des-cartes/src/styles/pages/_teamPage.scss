@@ -1,0 +1,59 @@
+@use "../abstracts/variables" as variables;
+
+.teams-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: variables.$black;
+  color: variables.$white;
+  font-family: variables.$font-family-primary;
+
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .team-cards-container {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px; // Limite la hauteur du conteneur
+    overflow-y: auto; // Ajoute un défilement vertical
+    margin-bottom: 20px;
+  }
+
+  .team-card {
+    background-color: variables.$white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    color: variables.$black;
+
+    .team-name {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .players-list {
+      list-style: none;
+      padding: 0;
+
+      .player-item {
+        padding: 5px 0;
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: variables.$white;
+    background-color: variables.$primary-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}

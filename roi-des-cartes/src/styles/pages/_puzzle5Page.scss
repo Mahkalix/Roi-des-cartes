@@ -1,0 +1,184 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as variables;
+
+.snake-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: variables.$black;
+  margin-top: -40px;
+
+  &.blurred {
+    filter: blur(5px);
+  }
+
+  .pause-button {
+    background-color: variables.$white;
+    color: variables.$black;
+    border: none;
+    width: 100px;
+    border: 1px solid variables.$black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: variables.$gray-light;
+    }
+  }
+
+  .status-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .word-display {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .lives-display {
+      font-size: 1.5rem;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(20, 4vw); // Adjusted to fit within the screen
+    grid-template-rows: repeat(20, 4vw); // Adjusted to fit within the screen
+    gap: 1px;
+    background-color: variables.$black;
+    border: 5px solid variables.$gray-light;
+    margin: 0 auto;
+    position: relative;
+
+    .cell {
+      width: 100%;
+      height: 100%;
+      background-color: variables.$black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+
+      &.snake {
+        background-color: variables.$valid;
+      }
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+  }
+
+  .controls-container {
+    margin-top: 20px; /* Distance entre la grille et les flèches */
+    display: flex;
+    justify-content: center;
+
+    .controls {
+      position: fixed; /* Fixe les boutons à une position spécifique */
+      bottom: 20px; /* Place les boutons en bas de l'écran */
+      left: 50%; /* Centre les boutons horizontalement */
+      transform: translateX(-50%); /* Ajuste pour centrer exactement */
+      display: grid;
+      grid-template-rows: 50px 50px 50px; /* Trois rangées */
+      grid-template-columns: 50px 50px 50px; /* Trois colonnes */
+      gap: 5px; /* Espacement entre les boutons */
+      z-index: 10; /* Place les boutons au-dessus des autres éléments */
+
+      .button-up {
+        grid-row: 1; /* Première rangée */
+        grid-column: 2; /* Deuxième colonne */
+      }
+
+      .button-left {
+        grid-row: 2; /* Deuxième rangée */
+        grid-column: 1; /* Première colonne */
+      }
+
+      .button-right {
+        grid-row: 2; /* Deuxième rangée */
+        grid-column: 3; /* Troisième colonne */
+      }
+
+      .button-down {
+        grid-row: 3; /* Troisième rangée */
+        grid-column: 2; /* Deuxième colonne */
+      }
+    }
+  }
+
+  .instructions-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur to the background */
+  }
+
+  .instructions-popup {
+    background-color: variables.$white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid variables.$gray-light;
+    width: 300px;
+    text-align: center;
+    filter: none; /* Ensure the modal itself is not blurred */
+
+    h2 {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      margin-bottom: 10px;
+      color: variables.$black;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: variables.$black;
+    }
+
+    .start-button {
+      width: 100%;
+      height: 50px;
+      font-size: 1rem;
+      margin: 0;
+      border-color: variables.$black;
+      border: 1px solid;
+    }
+  }
+
+  .finish-button {
+    background-color: variables.$white;
+    color: variables.$black;
+    border: none;
+    width: 150px;
+    border: 1px solid variables.$black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: variables.$gray-light;
+    }
+  }
+}

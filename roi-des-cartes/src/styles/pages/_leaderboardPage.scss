@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as variables;
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: variables.$black;
+  color: variables.$white;
+  font-family: variables.$font-family-primary;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .table-container {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px; // Limite la hauteur de la table
+    overflow-y: auto; // Ajoute un défilement vertical
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid variables.$white;
+      text-align: center;
+    }
+
+    th {
+      background-color: transparent;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: variables.$gray-light;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: variables.$white;
+    background-color: variables.$primary-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+}

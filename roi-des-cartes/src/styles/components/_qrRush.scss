@@ -1,0 +1,71 @@
+@use "../abstracts/variables" as variables;
+
+.countdown-timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: variables.$white;
+  position: relative;
+  top: 33px;
+  margin-right: 5px;
+}
+
+.qr-rush-container {
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: variables.$black;
+  position: relative;
+}
+
+.game-title {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: variables.$white;
+}
+
+.timer-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.qr-scanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+}
+
+.scan-counter {
+  margin-top: 20px;
+  font-size: 18px;
+  color: variables.$white;
+  font-weight: bold;
+}
+
+.game-over-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: variables.$black;
+  color: variables.$white;
+  padding: 20px;
+  box-sizing: border-box;
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+}

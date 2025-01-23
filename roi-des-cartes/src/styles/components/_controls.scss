@@ -1,0 +1,31 @@
+.controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-rows: 50px 50px 50px;
+  grid-template-columns: 50px 50px 50px;
+  gap: 10px;
+  z-index: 10; /* Assurez-vous que les boutons sont au-dessus des autres éléments */
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #e0e0e0;
+}
+
+.controls button:active {
+  background-color: #d0d0d0;
+}

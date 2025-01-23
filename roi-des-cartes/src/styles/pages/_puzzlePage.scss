@@ -1,0 +1,190 @@
+@use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
+
+.puzzle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.blurred {
+    filter: blur(5px);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: variables.$white;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.puzzle-piece {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$white;
+  border: 1px solid variables.$white;
+  cursor: pointer;
+  user-select: none;
+  background-size: 330% 330%;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .tile-number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 1.2rem;
+    color: variables.$primary-color;
+    background-color: variables.$white;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+}
+
+.puzzle-piece.empty {
+  background-color: transparent;
+  border: none;
+  cursor: default;
+}
+
+.solve-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: variables.$white;
+  background-color: variables.$primary-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: variables.$primary-color;
+  }
+}
+
+.reset-button {
+  margin-top: 10px;
+  padding: 10px;
+
+  color: variables.$white;
+  background-color: variables.$primary-color;
+  border: none;
+  border-radius: 30%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+
+  &:hover {
+    background-color: variables.$primary-color;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+}
+
+.option-button {
+  font-size: 0.8rem; // Reduced font size
+  padding: 5px 10px; // Reduced padding
+}
+
+.victory-message {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: variables.$valid;
+  text-align: center;
+}
+
+.timer {
+  font-family: variables.$font-family-secondary;
+  font-size: 3rem;
+  color: variables.$primary-color;
+}
+
+.question-block {
+  margin-bottom: 10px;
+}
+
+.question-block p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.check-button {
+  margin-top: 20px;
+}
+
+.instructions-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  background-color: variables.$white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid variables.$gray-light;
+  z-index: 1000;
+
+  h2 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: variables.$black;
+  }
+
+  p {
+    margin-bottom: 10px;
+    color: variables.$black;
+  }
+  img {
+    width: 175px;
+    height: 175px;
+    border-radius: 20px;
+  }
+
+  button {
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    margin: 0;
+    border-color: variables.$black;
+    border: 1px solid;
+  }
+}
+
+.instructions-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  backdrop-filter: blur(5px); /* Apply blur to the background */
+}

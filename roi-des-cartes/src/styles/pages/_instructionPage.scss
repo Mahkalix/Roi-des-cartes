@@ -1,0 +1,124 @@
+@use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
+
+.instruction-container {
+  @include mixins.flex-center;
+  padding: 20px;
+  flex-direction: column;
+  height: 65vh;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  color: variables.$white;
+  p {
+    text-align: justify;
+  }
+}
+
+/* Icône du volume */
+.volume-icon {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* Contenu principal */
+.instruction-content {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.instruction-content p {
+  margin-bottom: 20px;
+  @include mixins.flex-center;
+}
+
+.instruction-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.instruction-content li {
+  margin-bottom: 10px;
+  color: variables.$white;
+}
+
+/* Pagination (indicateurs de page) */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 8px;
+  height: 20vh;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: variables.$gray-light;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dot.active {
+  background-color: variables.$primary-color;
+  transform: scale(1.2);
+}
+
+.instruction-content p,
+.instruction-content ul {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.volume-button {
+  background-color: variables.$primary-color;
+  color: variables.$white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Espacement entre icône et texte */
+  font-family: "Arial", sans-serif;
+}
+
+.volume-button.speaking {
+  background-color: variables.$primary-color; /* Couleur différente pendant la lecture */
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  .nav-button {
+    height: 55px;
+  }
+}

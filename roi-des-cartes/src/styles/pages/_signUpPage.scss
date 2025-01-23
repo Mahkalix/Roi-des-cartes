@@ -1,0 +1,92 @@
+@use "../abstracts/mixins" as mixins;
+@use "../abstracts/variables" as variables;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: variables.$black;
+  width: 100%;
+  color: variables.$white;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conteneur principal du formulaire */
+.form-container-signUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title-signUp {
+  font-family: variables.$font-family-secondary;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-container {
+  gap: 20px;
+  .input-field {
+    width: 100%;
+    max-width: 90%;
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid variables.$white;
+    border-radius: 5px;
+    background-color: variables.$black;
+    color: variables.$white;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+/* Bouton d'inscription */
+.submit-button {
+  width: 100%;
+  max-width: 90%;
+  height: 45px;
+  background-color: variables.$white;
+  color: variables.$black;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: variables.$white;
+}
+
+/* Pour le compteur dans la page de signup */
+.countdown-timer-signup {
+  font-size: 60px;
+  font-weight: 800;
+  color: variables.$white;
+  text-align: center;
+  font-family: variables.$font-family-secondary;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.countdown-timer-qr {
+  font-size: 30px;
+  font-weight: normal;
+  color: variables.$valid;
+  text-align: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.inscription {
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+@use "../abstracts/variables";
+
+.players {
+  display: block;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.players li {
+  margin-bottom: 10px;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  select {
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 30%;
+    margin-top: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 40%;
+  }
+}
+
+.title-game5 {
+  font-family: variables.$font-family-secondary;
+}

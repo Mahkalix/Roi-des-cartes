@@ -1,0 +1,11 @@
+.shake-to-reveal {
+  display: flex;
+  margin: 20px;
+  height: 100vh;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  p {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,342 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+html {
+  @include mixins.flex-center;
+  background-color: variables.$gray-light;
+}
+
+body {
+  @include mixins.flex-center;
+  flex-direction: column;
+  font-size: variables.$font-size-base;
+  background-color: variables.$black;
+  font-family: variables.$font-family-primary;
+  color: variables.$white;
+  font-family: variables.$font-family-primary;
+  min-width: 320px;
+  overflow: hidden;
+  max-width: 480px;
+  max-height: 100svh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+#root {
+  width: 100%;
+  max-height: 100svh;
+}
+
+a {
+  font-weight: 500;
+  color: variables.$primary-color;
+  text-decoration: inherit;
+}
+a:hover {
+  color: variables.$primary-color;
+}
+
+h1 {
+  line-height: 1.1;
+}
+
+button {
+  background-color: variables.$white;
+  border-radius: 30px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: variables.$font-family-secondary;
+  cursor: pointer;
+  color: variables.$black;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  padding: 15px 30px 15px 30px;
+  border: 1px solid variables.$black;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: variables.$primary-color;
+  transition: all 0.5s ease-in-out;
+  border-radius: 30px;
+  z-index: -1;
+  transform: translate(-0px, -30px) scale(0);
+}
+
+button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button:hover {
+  color: variables.$white;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-left: 30px;
+}
+
+.title,
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: variables.$white;
+  text-align: center;
+}
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.input-field {
+  width: 100%;
+  max-width: 90%;
+  height: 45px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid variables.$white;
+  border-radius: 30px;
+  background-color: variables.$black;
+  color: variables.$white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: variables.$black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(44px, 9999px, 56px, 0);
+  }
+  5% {
+    clip: rect(12px, 9999px, 88px, 0);
+  }
+  10% {
+    clip: rect(90px, 9999px, 100px, 0);
+  }
+  15% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  20% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+  25% {
+    clip: rect(40px, 9999px, 50px, 0);
+  }
+  30% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  35% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+  40% {
+    clip: rect(50px, 9999px, 60px, 0);
+  }
+  45% {
+    clip: rect(30px, 9999px, 40px, 0);
+  }
+  50% {
+    clip: rect(70px, 9999px, 80px, 0);
+  }
+  55% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  60% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+  65% {
+    clip: rect(40px, 9999px, 50px, 0);
+  }
+  70% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  75% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+  80% {
+    clip: rect(50px, 9999px, 60px, 0);
+  }
+  85% {
+    clip: rect(30px, 9999px, 40px, 0);
+  }
+  90% {
+    clip: rect(70px, 9999px, 80px, 0);
+  }
+  95% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  5% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+  10% {
+    clip: rect(40px, 9999px, 50px, 0);
+  }
+  15% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  20% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+  25% {
+    clip: rect(50px, 9999px, 60px, 0);
+  }
+  30% {
+    clip: rect(30px, 9999px, 40px, 0);
+  }
+  35% {
+    clip: rect(70px, 9999px, 80px, 0);
+  }
+  40% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  45% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+  50% {
+    clip: rect(40px, 9999px, 50px, 0);
+  }
+  55% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  60% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+  65% {
+    clip: rect(50px, 9999px, 60px, 0);
+  }
+  70% {
+    clip: rect(30px, 9999px, 40px, 0);
+  }
+  75% {
+    clip: rect(70px, 9999px, 80px, 0);
+  }
+  80% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  85% {
+    clip: rect(60px, 9999px, 70px, 0);
+  }
+  90% {
+    clip: rect(40px, 9999px, 50px, 0);
+  }
+  95% {
+    clip: rect(80px, 9999px, 90px, 0);
+  }
+  100% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+}
+
+.rotating-card {
+  margin: 20px 0;
+  animation: rotate 5s infinite ease-in-out;
+
+  img {
+    width: 180px;
+    height: 250px;
+    border-radius: 15px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+//barre de scroll
+
+/* Pour les navigateurs WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: variables.$white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: variables.$primary-color;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: variables.$primary-color;
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: variables.$primary-color variables.$white;
+}
